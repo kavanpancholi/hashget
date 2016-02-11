@@ -1,10 +1,10 @@
 # Hashget
 
-Retrieve all the tweets from Tweeter based on keyword
+Retrieve all the tweets from Twitter based on keyword
 
 ### Installation
 
-Hashget requires [PHP](http://www.php.net/) >= 5.6.4 to run.
+Hashget requires [PHP](http://www.php.net/) >= 5.6.4 and Redis Server to run.
 
 Download and extract the [latest pre-built release](https://github.com/kavanpancholi/hashget).
 
@@ -19,22 +19,25 @@ Create database named hashget and update the database connectivity in .env file
 
 [Create Twitter App](https://apps.twitter.com/app/new) and grab the keys and access tokens. Add them to .env file
 
-### Make it work
+### Database Migration
 
 To create database tables (Migrate Database)
 ```
 $ php artisan migrate
 ```
-To stream tweets in queue (Note: It will not retrieve the tweets yet)
-```
-$ php artisan stream {keyword}
-```
-e.g. php artisan stream India
 
-Note: For the hash keyword or multiple words use quotes
-e.g. php artisan stream "India" or php artisan stream "Cricket 2016"
+### Make it work
+Start Redis server using this command
+```
+$ redis-server
+```
+To stream tweets in queue from Twitter Streaming API (Note: It will not retrieve the tweets and add in [Redis] Queue)
+```
+$ php artisan stream "{keyword}"
+```
+e.g. php artisan stream "India" or php artisan stream "#IndependenceDay"
 
-To add queue (and add stream data into database)
+To Listen Queue and add tweets into our database (It will retrieve all the tweets based on the keyword and add it into the database)
 ```
 $ php artisan queue:listen
 ```
