@@ -4,7 +4,7 @@ Retrieve all the tweets from Tweeter based on keyword
 
 ### Installation
 
-Dillinger requires [PHP](https://nodejs.org/) >= 5.6.4 to run.
+Hashget requires [PHP](http://www.php.net/) >= 5.6.4 to run.
 
 Download and extract the [latest pre-built release](https://github.com/kavanpancholi/hashget).
 
