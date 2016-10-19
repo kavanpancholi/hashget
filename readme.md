@@ -31,12 +31,9 @@ $ php artisan migrate
 ```
 To stream tweets in queue (Note: It will not retrieve the tweets yet)
 ```
-$ php artisan stream {keyword}
+$ php artisan stream "{keyword}"
 ```
-e.g. php artisan stream India
-
-Note: For the hash keyword or multiple words use quotes
-e.g. php artisan stream "India" or php artisan stream "Cricket 2016"
+e.g. php artisan stream "India" or php artisan stream "#IndependenceDay"
 
 To add queue (and add stream data into database)
 ```
