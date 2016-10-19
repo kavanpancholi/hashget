@@ -1,10 +1,10 @@
 # Hashget
 
-Retrieve all the tweets from Tweeter based on keyword
+Retrieve all the tweets from Twitter based on keyword
 
 ### Installation
 
-Hashget requires [PHP](http://www.php.net/) >= 5.6.4 to run.
+Hashget requires [PHP](http://www.php.net/) >= 5.6.4 and Redis Server to run.
 
 Download and extract the [latest pre-built release](https://github.com/kavanpancholi/hashget).
 
@@ -20,6 +20,10 @@ Create database named hashget and update the database connectivity in .env file
 [Create Twitter App](https://apps.twitter.com/app/new) and grab the keys and access tokens. Add them to .env file
 
 ### Make it work
+Start Redis server using this command
+```
+$ redis-server
+```
 
 To create database tables (Migrate Database)
 ```
